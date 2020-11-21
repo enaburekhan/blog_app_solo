@@ -2001,3 +2001,3077 @@ app/controllers/articles_controller.rb:11:in `create'
   [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" LIMIT ?[0m  [["LIMIT", 11]]
 DEPRECATION WARNING: Using `bin/rake routes` is deprecated and will be removed in Rails 6.1. Use `bin/rails routes` instead.
  (called from load at /home/eric/.rbenv/versions/2.7.0/bin/rake:23)
+Started GET "/articles/new" for ::1 at 2020-11-20 16:34:11 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 19.5ms | Allocations: 2675)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 59ms (Views: 35.4ms | ActiveRecord: 1.3ms | Allocations: 12661)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 16:34:34 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"YaZ2HNs2gBJIUk0yHAL2f2OGAGtY2d/QTvuNiBAW/zCGuvABaMjeL/ZD1AtA+FVfmslDrULq08Kqs4mfxrIcGQ==", "article"=>{"title"=>"show again", "description"=>"show back again"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:10:in `create'
+  [1m[36mArticle Create (4.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "show again"], ["description", "show back again"], ["created_at", "2020-11-20 15:34:34.652350"], ["updated_at", "2020-11-20 15:34:34.652350"]]
+  ↳ app/controllers/articles_controller.rb:10:in `create'
+  [1m[35m (23.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:10:in `create'
+Redirected to http://localhost:3000/articles/12
+Completed 302 Found in 42ms (ActiveRecord: 28.5ms | Allocations: 5181)
+
+
+Started GET "/articles/12" for ::1 at 2020-11-20 16:34:34 +0100
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/12" for ::1 at 2020-11-20 18:36:23 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/12" for ::1 at 2020-11-20 18:36:35 +0100
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/new" for ::1 at 2020-11-20 18:36:42 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 771)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 15.5ms | ActiveRecord: 0.0ms | Allocations: 7443)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 18:37:08 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"lfHnMKzFxjl5XbAv0P1n/pjFOYyY9K7VzgkX54eno4ly7WEtHzuYBMdMKRaMB8TeYYp6SoLHoscqQRPwUQNAoA==", "article"=>{"title"=>"hello", "description"=>"welcome again"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hello"], ["description", "welcome again"], ["created_at", "2020-11-20 17:37:08.747165"], ["updated_at", "2020-11-20 17:37:08.747165"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[35m (16.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+Redirected to http://localhost:3000/articles/13
+Completed 302 Found in 29ms (ActiveRecord: 16.8ms | Allocations: 4359)
+
+
+Started GET "/articles/13" for ::1 at 2020-11-20 18:37:08 +0100
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/13" for ::1 at 2020-11-20 21:17:15 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:17:21 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 879)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 5189)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 21:17:28 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"MBe6569CkMbPoNrVyDbp2nCmFlerBIkkvZkvQ2QOhGTXCzz6HLzO+3GxQ+yUzEr6ielVkbE3hTZZ0StUsqpnTQ==", "article"=>{"title"=>"", "description"=>""}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 707)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 5838)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 21:17:32 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"HQttwcWbob+wTXXxliL7R0DVN5VliIAxGkWTqHusElX6F+vcdmX/gg5c7MjK2FhnuZp0U3+7jCP+DZe/rQjxfA==", "article"=>{"title"=>"", "description"=>""}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 695)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 12.0ms | ActiveRecord: 0.0ms | Allocations: 5667)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 21:17:36 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"LMBTI96tYFYn6Xd2bWFzePCBWEP5lxHsYeGVfvhTGxzL3NU+bVM+a5n47k8xm9BYCc4bheOkHf6FqZFpLvf4NQ==", "article"=>{"title"=>"", "description"=>""}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.9ms | Allocations: 694)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 5672)
+
+
+Started GET "/articles" for ::1 at 2020-11-20 21:27:51 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:28:01 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1173)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 2416)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+   <%= @article.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:       <%= @article.errors.full_messages.each do |msg| %>
+6:       <li><%= msg %></li>
+7:       <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:30:25 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.4ms | Allocations: 1172)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2419)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:       <li><%= msg %></li>
+7:       <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:33:00 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1170)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2408)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:       <li><%= msg %></li>
+7:      <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:33:20 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1157)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1664)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:       <li><%= msg %></li>
+7:      <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:37:03 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1170)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2408)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:       <li><%= msg %></li>
+7:       <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:37:45 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1532)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.0ms | Allocations: 7075)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:       <li><%= msg %></li>
+7:       <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:38:08 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1160)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1699)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+   <li><%= msg %></li>
+   <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:       <li><%= msg %></li>
+7:       <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:39:36 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1172)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2427)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:      <li><%= msg %></li>
+7:      <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:45:45 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1172)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2419)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+  <ul>
+    <%= @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:      <ul>
+5:        <%= @article.errors.full_messages.each do |msg| %>
+6:        <li><%= msg %></li>
+7:        <% end %>
+8:      </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:45:56 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1160)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1674)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+  <ul>
+    <%= @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:      <ul>
+5:        <%= @article.errors.full_messages.each do |msg| %>
+6:        <li><%= msg %></li>
+7:        <% end %>
+8:      </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:46:37 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1170)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 2408)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+  <ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:      <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:        <li><%= msg %></li>
+7:      <% end %>
+8:      </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:47:54 +0100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1532)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.1ms | Allocations: 7075)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+  <ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:      <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:        <li><%= msg %></li>
+7:      <% end %>
+8:      </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:49:26 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1173)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2452)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:        <li><%= msg %></li>
+7:      <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:55:59 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1172)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2419)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+  <ul>
+    <%= @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:      <ul>
+5:        <%= @article.errors.full_messages.each do |msg| %>
+6:          <li><%= msg %></li>
+7:        <% end %>
+8:      </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 21:59:24 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 1159)
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1673)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+  <ul>
+    <%= @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:      <ul>
+5:        <%= @article.errors.full_messages.each do |msg| %>
+6:          <li><%= msg %></li>
+7:        <% end %>
+8:      </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:01:29 +0100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1532)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.9ms | Allocations: 7075)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+  <ul>
+    <%= @article.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:      <ul>
+5:        <%= @article.errors.full_messages.each do |msg| %>
+6:          <li><%= msg %></li>
+7:        <% end %>
+8:      </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:03:09 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1173)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 2452)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+   <ul>
+      <%= @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+   </ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:       <ul>
+5:          <%= @article.errors.full_messages.each do |msg| %>
+6:            <li><%= msg %></li>
+7:          <% end %>
+8:       </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:07:31 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1172)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2419)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+   <%= @article.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+   <% end %>
+</ul>
+<% end %>
+
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:       <%= @article.errors.full_messages.each do |msg| %>
+6:         <li><%= msg %></li>
+7:       <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    
+12:    <%= form_for @article do |f| %>
+13:    
+14:     <p>
+15:       <%= f.label :title %><br/>
+16:       <%= f.text_field :title %>
+17:     </p> 
+18:    
+19:     <p>
+20:       <%= f.label :description %><br/>
+21:       <%= f.text_area :description %>
+22:     </p>
+23:    
+24:     <p>
+25:       <%= f.submit %>
+26:     </p>
+27:    
+28:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:30: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:11:56 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 1171)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 2418)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+   <%= @article.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+   <% end %>
+</ul>
+<% end %>
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:       <%= @article.errors.full_messages.each do |msg| %>
+6:         <li><%= msg %></li>
+7:       <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    <%= form_for @article do |f| %>
+12:    
+13:     <p>
+14:       <%= f.label :title %><br/>
+15:       <%= f.text_field :title %>
+16:     </p> 
+17:    
+18:     <p>
+19:       <%= f.label :description %><br/>
+20:       <%= f.text_area :description %>
+21:     </p>
+22:    
+23:     <p>
+24:       <%= f.submit %>
+25:     </p>
+26:    
+27:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:15:55 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1172)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 2410)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do |msg| %>
+6:        <li><%= msg %></li>
+7:      <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    <%= form_for @article do |f| %>
+12:    
+13:     <p>
+14:       <%= f.label :title %><br/>
+15:       <%= f.text_field :title %>
+16:     </p> 
+17:    
+18:     <p>
+19:       <%= f.label :description %><br/>
+20:       <%= f.text_area :description %>
+21:     </p>
+22:    
+23:     <p>
+24:       <%= f.submit %>
+25:     </p>
+26:    
+27:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:17:44 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 1171)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2418)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h1>Create an article</h1>
+
+<%= if @article.errors.any? %>
+<ul>
+  <%= @article.errors.full_messages.each do | msg | %>
+    <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @article do |f| %>
+
+ <p>
+   <%= f.label :title %><br/>
+   <%= f.text_field :title %>
+ </p> 
+
+ <p>
+   <%= f.label :description %><br/>
+   <%= f.text_area :description %>
+ </p>
+
+ <p>
+   <%= f.submit %>
+ </p>
+
+<% end %>
+):
+1:    <h1>Create an article</h1>
+2:    
+3:    <%= if @article.errors.any? %>
+4:    <ul>
+5:      <%= @article.errors.full_messages.each do | msg | %>
+6:        <li><%= msg %></li>
+7:      <% end %>
+8:    </ul>
+9:    <% end %>
+10:    
+11:    <%= form_for @article do |f| %>
+12:    
+13:     <p>
+14:       <%= f.label :title %><br/>
+15:       <%= f.text_field :title %>
+16:     </p> 
+17:    
+18:     <p>
+19:       <%= f.label :description %><br/>
+20:       <%= f.text_area :description %>
+21:     </p>
+22:    
+23:     <p>
+24:       <%= f.submit %>
+25:     </p>
+26:    
+27:    <% end %>
+  
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:3: syntax error, unexpected ')', expecting `then' or ';' or '\n'
+app/views/articles/new.html.erb:9: syntax error, unexpected `end', expecting ')'
+app/views/articles/new.html.erb:29: syntax error, unexpected `end', expecting ')'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:19:04 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 14.5ms | Allocations: 4704)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 29.9ms | ActiveRecord: 0.0ms | Allocations: 10414)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-20 22:20:15 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 4040)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-20 22:20:21 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 685)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.0ms | Allocations: 4024)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 22:20:30 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"MEYG+i5b0l0tZhzzIG7Rh87hJpRN/PWTuxv/GDp4157XWoDnnaWMYJN3hcp8lHKnN65lUlfP+YFfU/sP7Nw0tw==", "article"=>{"title"=>"rr", "description"=>"c"}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 965)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.9ms | ActiveRecord: 0.0ms | Allocations: 5612)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 22:21:26 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"zgv3ELoW3ndgD8FMh9KrVUBzrlcW169Va8q74CpD7DQpF3ENCeiASt4eWHXbKAh1uTztkQzko0ePgr/3/OcPHQ==", "article"=>{"title"=>"", "description"=>""}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1194)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 6245)
+
+
+Started GET "/articles" for ::1 at 2020-11-20 22:24:00 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:25:06 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.1ms | Allocations: 967)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 5266)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-20 22:25:12 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 692)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.0ms | Allocations: 4033)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 22:25:14 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"BYNt3qLKJfC7Aa5hphF9//nBAQ9XBzv1hHt2soUeCJ/in+vDETR7zQUQN1j6697fAI5CyU00N+dgM3KlU7rrtg==", "article"=>{"title"=>"", "description"=>""}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1194)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 6168)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 22:26:15 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"zssFGYop0PXVDYiJBCoqXInC2N0f02/b+Ns9ZK3VRaYp14MEOdeOyGscEbBY0Il8cI2bGwXgY8kckzlze3Gmjw==", "article"=>{"title"=>"scala conference", "description"=>"Welcome to scala 3.0, aka dotty"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Create (0.6ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "scala conference"], ["description", "Welcome to scala 3.0, aka dotty"], ["created_at", "2020-11-20 21:26:15.140653"], ["updated_at", "2020-11-20 21:26:15.140653"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[35m (13.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+Redirected to http://localhost:3000/articles/14
+Completed 302 Found in 22ms (ActiveRecord: 14.2ms | Allocations: 4657)
+
+
+Started GET "/articles/14" for ::1 at 2020-11-20 22:26:15 +0100
+  
+AbstractController::ActionNotFound (The action 'show' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/14" for ::1 at 2020-11-20 22:30:13 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+Completed 406 Not Acceptable in 16ms (ActiveRecord: 0.7ms | Allocations: 6423)
+
+
+  
+ActionController::MissingExactTemplate (ArticlesController#show is missing a template for request formats: text/html):
+  
+actionpack (6.0.3.4) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
+actionpack (6.0.3.4) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:195:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:135:in `run_callbacks'
+actionpack (6.0.3.4) lib/abstract_controller/callbacks.rb:41:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/rescue.rb:22:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `block in instrument'
+activesupport (6.0.3.4) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+activesupport (6.0.3.4) lib/active_support/notifications.rb:180:in `instrument'
+actionpack (6.0.3.4) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
+actionpack (6.0.3.4) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
+activerecord (6.0.3.4) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:136:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/14" for ::1 at 2020-11-20 22:35:12 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 126)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.2ms | ActiveRecord: 0.3ms | Allocations: 4973)
+
+
+Started GET "/articles/14" for ::1 at 2020-11-20 22:38:21 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.5ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 13)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 6.7ms | ActiveRecord: 1.4ms | Allocations: 7538)
+
+
+Started GET "/articles/14" for ::1 at 2020-11-20 22:39:08 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 13)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 8.8ms | ActiveRecord: 1.0ms | Allocations: 7525)
+
+
+Started GET "/articles/14" for ::1 at 2020-11-20 22:39:10 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 11)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.8ms | ActiveRecord: 0.2ms | Allocations: 3864)
+
+
+Started GET "/articles" for ::1 at 2020-11-20 22:39:17 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/new" for ::1 at 2020-11-20 22:39:21 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1018)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 4496)
+
+
+Started POST "/articles" for ::1 at 2020-11-20 22:40:02 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"YmOSmuNgbFH81kZJxJ5v3tNoICdDnJ+rD7/iHcDYvEuFfxSHUJ4ybELH33CYZMz+Kidj4Vmvk7nr9+YKFnxfYg==", "article"=>{"title"=>"another article", "description"=>"still another article yet again"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Create (2.7ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "another article"], ["description", "still another article yet again"], ["created_at", "2020-11-20 21:40:02.903578"], ["updated_at", "2020-11-20 21:40:02.903578"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[35m (9.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+Redirected to http://localhost:3000/articles/15
+Completed 302 Found in 20ms (ActiveRecord: 12.0ms | Allocations: 3491)
+
+
+Started GET "/articles/15" for ::1 at 2020-11-20 22:40:02 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 11)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 3879)
+
+
+Started GET "/articles/15" for ::1 at 2020-11-20 22:40:53 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 13)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 6.0ms | ActiveRecord: 1.6ms | Allocations: 7537)
+
+
+Started GET "/articles/15" for ::1 at 2020-11-20 22:41:02 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 11)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 3864)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-21 05:32:08 +0100
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 2768)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 31.3ms | ActiveRecord: 0.8ms | Allocations: 12840)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-21 05:32:46 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 693)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 4037)
+
+
+Started POST "/articles" for ::1 at 2020-11-21 05:32:59 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"7gGt6S0BrOF2+AcV32dnBSryuRRUy9VRyjFR+xwI9qkJHSv0nv/y3MjpniyDncQl07360k742UMueVXsyqwVgA==", "article"=>{"title"=>"aaa", "description"=>""}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 8.9ms | Allocations: 960)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 23.3ms | ActiveRecord: 0.0ms | Allocations: 5622)
+
+
+Started POST "/articles" for ::1 at 2020-11-21 05:33:36 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"OS8j72QkkTWXCxxbPhozLcpRbTIS4FPoZKBoMWDi8mfeM6Xy19rPCCkahWJi4JANMx4u9AjTX/qA6GwmtkYRTg==", "article"=>{"title"=>"aaa", "description"=>"another article being created"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Create (1.8ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "aaa"], ["description", "another article being created"], ["created_at", "2020-11-21 04:33:36.321551"], ["updated_at", "2020-11-21 04:33:36.321551"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[35m (9.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+Redirected to http://localhost:3000/articles/16
+Completed 302 Found in 34ms (ActiveRecord: 10.9ms | Allocations: 5056)
+
+
+Started GET "/articles/16" for ::1 at 2020-11-21 05:33:36 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 128)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 41ms (Views: 9.4ms | ActiveRecord: 0.3ms | Allocations: 6342)
+
+
+Started GET "/articles/16" for ::1 at 2020-11-21 05:36:31 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mArticle Load (0.4ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:19:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 14)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 5.9ms | ActiveRecord: 1.9ms | Allocations: 7573)
+
+
+Started GET "/articles/16" for ::1 at 2020-11-21 05:37:40 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 13)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 8.9ms | ActiveRecord: 0.8ms | Allocations: 7488)
+
+
+Started GET "/articles/16" for ::1 at 2020-11-21 05:37:42 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"16"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.1ms | ActiveRecord: 0.2ms | Allocations: 3885)
+
+
+Started GET "/articles" for ::1 at 2020-11-21 05:37:43 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/new" for ::1 at 2020-11-21 05:37:49 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 771)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4152)
+
+
+Started POST "/articles" for ::1 at 2020-11-21 05:39:10 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"y7F8rh75MP6Xxmaj07MXnCAPU8B8hx0XFAcbhgHHk1IsrfqzrQduwynX/5qPSbS82UAQBma0EQXwTx+R12Nwew==", "article"=>{"title"=>"", "description"=>"d"}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 4.2ms | Allocations: 1074)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 5885)
+
+
+Started POST "/articles" for ::1 at 2020-11-21 05:39:40 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"TotyfguXmr3G7KDqkJ4zwFLsvTZEAqWfM+A7N+KAFz2pl/RjuGnEgHj9OdPMZJDgq6P+8F4xqY3XqD8gNCT0FA==", "article"=>{"title"=>"hello there", "description"=>"welcome to rails"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hello there"], ["description", "welcome to rails"], ["created_at", "2020-11-21 04:39:40.847438"], ["updated_at", "2020-11-21 04:39:40.847438"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[35m (16.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+Redirected to http://localhost:3000/articles/17
+Completed 302 Found in 24ms (ActiveRecord: 16.8ms | Allocations: 4544)
+
+
+Started GET "/articles/17" for ::1 at 2020-11-21 05:39:40 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.2ms | Allocations: 3907)
+
+
+Started GET "/articles/17" for ::1 at 2020-11-21 05:40:25 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.2ms | Allocations: 12)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 10.0ms | ActiveRecord: 1.2ms | Allocations: 7630)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-21 05:40:35 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 744)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.0ms | Allocations: 4068)
+
+
+Started POST "/articles" for ::1 at 2020-11-21 05:40:52 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"6NuExVlbx42y53Z38VP1/2HRNmy+i0PbM6aaLPhqQwkPxwLY6qWZsAz2706tqVbfmJ51qqS4T8nX7p47Ls6gIA==", "article"=>{"title"=>"hey", "description"=>"welcome, hey"}, "commit"=>"Create Article"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1195)
+
+
+  
+NoMethodError (undefined method `save' for nil:NilClass):
+  
+app/controllers/articles_controller.rb:9:in `create'
+Started POST "/articles" for ::1 at 2020-11-21 05:41:14 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"6NuExVlbx42y53Z38VP1/2HRNmy+i0PbM6aaLPhqQwkPxwLY6qWZsAz2706tqVbfmJ51qqS4T8nX7p47Ls6gIA==", "article"=>{"title"=>"hey", "description"=>"welcome, hey"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Create (0.4ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hey"], ["description", "welcome, hey"], ["created_at", "2020-11-21 04:41:14.401170"], ["updated_at", "2020-11-21 04:41:14.401170"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+Redirected to http://localhost:3000/articles/18
+Completed 302 Found in 29ms (ActiveRecord: 12.1ms | Allocations: 8007)
+
+
+Started GET "/articles/18" for ::1 at 2020-11-21 05:41:14 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"18"}
+  [1m[36mArticle Load (0.3ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 18], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 4618)
+
+
+Started POST "/articles" for ::1 at 2020-11-21 05:58:04 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"6NuExVlbx42y53Z38VP1/2HRNmy+i0PbM6aaLPhqQwkPxwLY6qWZsAz2706tqVbfmJ51qqS4T8nX7p47Ls6gIA==", "article"=>{"title"=>"hey", "description"=>"welcome, hey"}, "commit"=>"Create Article"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[36mArticle Create (0.5ms)[0m  [1m[32mINSERT INTO "articles" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "hey"], ["description", "welcome, hey"], ["created_at", "2020-11-21 04:58:04.676430"], ["updated_at", "2020-11-21 04:58:04.676430"]]
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/articles_controller.rb:9:in `create'
+Redirected to http://localhost:3000/articles/19
+Completed 302 Found in 24ms (ActiveRecord: 15.1ms | Allocations: 4515)
+
+
+Started GET "/articles/19" for ::1 at 2020-11-21 05:58:04 +0100
+Processing by ArticlesController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mArticle Load (0.2ms)[0m  [1m[34mSELECT "articles".* FROM "articles" WHERE "articles"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/articles_controller.rb:18:in `show'
+  Rendering articles/show.html.erb within layouts/application
+  Rendered articles/show.html.erb within layouts/application (Duration: 0.1ms | Allocations: 10)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.2ms | Allocations: 3892)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-21 05:58:17 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 742)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.0ms | Allocations: 4084)
+
+
+Started POST "/articles" for ::1 at 2020-11-21 05:58:20 +0100
+Processing by ArticlesController#create as HTML
+  Parameters: {"authenticity_token"=>"6Ebl/GRkJyMYq+ph4IlRnxL8/gyu6vijpiY65v87NvYPWmPh15p5Hqa6c1i8c/K/67O9yrTZ9LFCbj7xKZ/V3w==", "article"=>{"title"=>"", "description"=>""}, "commit"=>"Create Article"}
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1196)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.6ms | ActiveRecord: 0.0ms | Allocations: 6167)
+
+
+Started GET "/articles" for ::1 at 2020-11-21 05:58:38 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles" for ::1 at 2020-11-21 05:58:41 +0100
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for ArticlesController):
+  
+actionpack (6.0.3.4) lib/abstract_controller/base.rb:131:in `process'
+actionview (6.0.3.4) lib/action_view/rendering.rb:39:in `process'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (6.0.3.4) lib/action_controller/metal.rb:254:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:33:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:49:in `block in serve'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `each'
+actionpack (6.0.3.4) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (6.0.3.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.2.3) lib/rack/tempfile_reaper.rb:15:in `call'
+rack (2.2.3) lib/rack/etag.rb:27:in `call'
+rack (2.2.3) lib/rack/conditional_get.rb:27:in `call'
+rack (2.2.3) lib/rack/head.rb:12:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
+rack (2.2.3) lib/rack/session/abstract/id.rb:266:in `context'
+rack (2.2.3) lib/rack/session/abstract/id.rb:260:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/cookies.rb:648:in `call'
+activerecord (6.0.3.4) lib/active_record/migration.rb:567:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
+activesupport (6.0.3.4) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.3.4) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.3.4) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.3.4) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.3.4) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.3.4) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.3.4) lib/rails/engine.rb:527:in `call'
+puma (4.3.6) lib/puma/configuration.rb:228:in `call'
+puma (4.3.6) lib/puma/server.rb:713:in `handle_request'
+puma (4.3.6) lib/puma/server.rb:472:in `process_client'
+puma (4.3.6) lib/puma/server.rb:328:in `block in run'
+puma (4.3.6) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/articles/new" for ::1 at 2020-11-21 05:58:50 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 685)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 9.3ms | ActiveRecord: 0.0ms | Allocations: 4032)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-21 06:00:44 +0100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 749)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 9.2ms | ActiveRecord: 1.1ms | Allocations: 7612)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-21 06:00:47 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 685)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.0ms | Allocations: 4021)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-21 07:40:48 +0100
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 749)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 7232)
+
+
+Started GET "/articles/new" for ::1 at 2020-11-21 07:41:27 +0100
+Processing by ArticlesController#new as HTML
+  Rendering articles/new.html.erb within layouts/application
+  Rendered articles/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 685)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 4021)
+
+
