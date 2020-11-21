@@ -22,7 +22,7 @@ To get this project set up on your local machine, follow these simple steps:
 
 **Open Terminal.**
 - Navigate to your desired location to download the contents of this repository.
-- Copy and paste the following code into the Terminal: git clone git@github.com:enaburekhan/blog_app_solo.git
+- Copy and paste the following code into the Terminal: git clone https://github.com/enaburekhan/blog_app_solo.git
 - Cd blog_app_solo.
 -Run bundle install to get the necesary gems.
 - Run rails db:migrate.
